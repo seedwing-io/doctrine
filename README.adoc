@@ -1,0 +1,35 @@
+# Open Policy Agent policy rules
+
+This repository contains OPA policy rules.
+
+## Installing OPA
+
+link:https://www.openpolicyagent.org/docs/latest/#running-opa[running-opa]
+
+The following version was used during development:
+----
+$ opa version
+Version: 0.45.0
+Build Commit: 523c285bcc417b2ec8a26b0a248407b1e840d488
+Build Timestamp: 2022-10-07T18:38:08Z
+Build Hostname: 3710e50c71de
+Go Version: go1.19.2
+Platform: linux/amd64
+WebAssembly: available
+----
+
+## Testing
+----
+$ make test-osi
+opa test data/licenses/osi.rego tests/ -r test_osi* -v
+tests/test-osi.rego:
+data.test_osi.test_is_osi: PASS (432.94µs)
+--------------------------------------------------------------------------------
+PASS: 1/1
+----
+
+## Building wasm policy modules
+----
+$ make osi.wasm
+----
+The wasm module will be available in the `build` directory.
