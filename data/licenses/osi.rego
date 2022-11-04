@@ -1,9 +1,9 @@
-package licenses
+package osi_policy
 
 import data.licenses
 
 osi[license] {
-    license := licenses.licenses[_]
+    license := data.licenses[_]
     license.isOsiApproved == true
 }
 

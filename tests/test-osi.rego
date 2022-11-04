@@ -1,7 +1,7 @@
-package test_osi
+package test_osi_policy
 
 import future.keywords
-import data.licenses.is_osi
+import data.osi_policy.is_osi
 
 list := [{
   "reference": "https://spdx.org/licenses/Apache-2.0.html",
@@ -20,6 +20,6 @@ list := [{
 
 test_is_osi if {
   r := is_osi with input.licenseId as "Apache-2.0"
-              with data.licenses.licenses as list
+              with data.licenses as list
   r == true
 }

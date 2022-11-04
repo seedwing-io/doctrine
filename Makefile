@@ -1,5 +1,5 @@
 osi.wasm: data/licenses/osi.rego | build_dir
-	opa build -t wasm -e licenses/is_osi $<
+	opa build -t wasm -e osi_policy/is_osi $<
 	@tar -xf bundle.tar.gz /policy.wasm >/dev/null 2>&1
 	@mv policy.wasm build/$@
 	@${RM} bundle.tar.gz
