@@ -23,8 +23,11 @@ test-public_domain: data/licenses/public_domain.rego
 test-strong_copyleft: data/licenses/strong_copyleft.rego
 	@$(call opa_test,test_*_strong_copyleft*)
 
+test-weak_copyleft: data/licenses/weak_copyleft.rego
+	@$(call opa_test,test_*_weak_copyleft*)
+
 test: test-osi test-network test-permissive test-public_domain \
-	test-strong_copyleft
+	test-strong_copyleft test-weak_copyleft
 
 .PHONY: build_dir
 build_dir:

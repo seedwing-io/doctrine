@@ -1,4 +1,4 @@
-package licenses
+package weak_copyleft
 
 import data.licenses
 
@@ -24,7 +24,7 @@ weak_copyleft_ids := [
 ]
 
 weak_copyleft[license] {
-    license := licenses.licenses[_]
+    license := licenses[_]
     license.licenseId == weak_copyleft_ids[_]
 }
 
