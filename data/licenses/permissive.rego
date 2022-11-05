@@ -1,4 +1,4 @@
-package licenses
+package permissive
 
 import data.licenses
 
@@ -26,14 +26,14 @@ permissive_ids := [
 ]
 
 permissive[license] {
-    license := licenses.licenses[_]
+    license := licenses[_]
     license.licenseId == permissive_ids[_]
 }
 
 default is_permissive := false
 
 is_permissive {
-  license := public_domain[_]
+  license := permissive[_]
   license.licenseId == input.licenseId
 }
 
