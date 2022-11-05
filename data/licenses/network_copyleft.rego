@@ -1,4 +1,4 @@
-package licenses
+package network
 
 import data.licenses
 
@@ -19,7 +19,7 @@ network_copyleft_ids := [
 ]
 
 network_copyleft[license] {
-    license := licenses.licenses[_]
+    license := licenses[_]
     license.licenseId == network_copyleft_ids[_]
 }
 

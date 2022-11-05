@@ -4,8 +4,17 @@ osi.wasm: data/licenses/osi.rego | build_dir
 	@mv policy.wasm build/$@
 	@${RM} bundle.tar.gz
 
+define opa_test
+	opa test $^ tests/ -r $1 -v
+endef
+
 test-osi: data/licenses/osi.rego data/licenses/not_osi.rego
-	opa test $^ tests/ -r test_*_osi* -v
+	@$(call opa_test,test_*_osi*)
+
+test-network: data/licenses/network_copyleft.rego
+	@$(call opa_test,test_*_network*)
+
+test: test-osi test-network
 
 .PHONY: build_dir
 build_dir:
