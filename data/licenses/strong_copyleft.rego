@@ -1,4 +1,4 @@
-package licenses
+package strong_copyleft
 
 import data.licenses
 
@@ -16,7 +16,7 @@ strong_copyleft_ids := [
 ]
 
 strong_copyleft[license] {
-    license := licenses.licenses[_]
+    license := licenses[_]
     license.licenseId == strong_copyleft_ids[_]
 }
 
