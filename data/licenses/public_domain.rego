@@ -1,4 +1,4 @@
-package licenses
+package public_domain
 
 import data.licenses
 
@@ -10,7 +10,7 @@ public_domain_ids := [
 ]
 
 public_domain[license] {
-    license := licenses.licenses[_]
+    license := licenses[_]
     license.licenseId == public_domain_ids[_]
 }
 

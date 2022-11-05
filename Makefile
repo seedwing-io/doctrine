@@ -17,7 +17,10 @@ test-network: data/licenses/network_copyleft.rego
 test-permissive: data/licenses/permissive.rego
 	@$(call opa_test,test_*_permissive*)
 
-test: test-osi test-network test-permissive
+test-public_domain: data/licenses/public_domain.rego
+	@$(call opa_test,test_*_public_domain*)
+
+test: test-osi test-network test-permissive test-public_domain
 
 .PHONY: build_dir
 build_dir:
