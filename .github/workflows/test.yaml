@@ -1,0 +1,24 @@
+name: doctrine test
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Source
+      - uses: actions/checkout@v2
+
+      - name: Install OPA
+        run: |
+          curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.45.0/opa_linux_amd64
+          chmod 744 opa
+          export PATH=$PWD:$PATH
+          opa version
+
+      - name: Run Test
+        run: make test
