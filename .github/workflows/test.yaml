@@ -18,9 +18,6 @@ jobs:
           curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.45.0/opa_linux_amd64
           chmod 744 opa
           echo "$PWD" >> $GITHUB_PATH
-          ls $PWD/opa
-          echo $PATH
-          opa version
 
       - name: Run Test
         run: make test
