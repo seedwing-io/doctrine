@@ -16,8 +16,11 @@ test-strong_copyleft: data/licenses/strong_copyleft.rego
 test-weak_copyleft: data/licenses/weak_copyleft.rego
 	@$(call opa_test,test_*_weak_copyleft*)
 
+test-all: data/licenses/all.rego
+	@$(call opa_test,test_*_all*)
+
 test: test-osi test-network test-permissive test-public_domain \
-	test-strong_copyleft test-weak_copyleft
+	test-strong_copyleft test-weak_copyleft test-all
 
 define opa_test
 	opa test $^ tests/ -r $1 -v

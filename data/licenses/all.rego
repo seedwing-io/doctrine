@@ -1,8 +1,8 @@
-package licenses
+package all_policy
 
 import data.licenses
 
-all[license] {
-    license := licenses.licenses[_]
+all[license] := licenses {
+    license := licenses[_]
 }
 
