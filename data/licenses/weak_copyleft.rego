@@ -1,4 +1,4 @@
-package weak_copyleft
+package weak_copyleft_policy
 
 import data.licenses
 

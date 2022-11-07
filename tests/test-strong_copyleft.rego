@@ -1,7 +1,7 @@
 package test_strong_copyleft_policy
 
 import future.keywords
-import data.strong_copyleft.is_strong_copyleft
+import data.strong_copyleft_policy.is_strong_copyleft
 
 list := [
     {

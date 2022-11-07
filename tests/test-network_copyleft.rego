@@ -1,7 +1,7 @@
 package test_network_policy
 
 import future.keywords
-import data.network.is_network_copyleft 
+import data.network_policy.is_network_copyleft 
 
 list := [
     {

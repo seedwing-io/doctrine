@@ -1,7 +1,7 @@
 package test_public_domain_policy
 
 import future.keywords
-import data.public_domain.is_public_domain
+import data.public_domain_policy.is_public_domain
 
 list := [
     {

@@ -1,7 +1,7 @@
 package test_weak_copyleft_policy
 
 import future.keywords
-import data.weak_copyleft.is_weak_copyleft
+import data.weak_copyleft_policy.is_weak_copyleft
 
 list := [
     {

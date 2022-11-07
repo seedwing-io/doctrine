@@ -1,7 +1,7 @@
 package test_permissive_policy
 
 import future.keywords
-import data.permissive.is_permissive 
+import data.permissive_policy.is_permissive 
 
 list := [
     {

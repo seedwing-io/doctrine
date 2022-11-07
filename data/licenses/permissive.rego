@@ -1,4 +1,4 @@
-package permissive
+package permissive_policy
 
 import data.licenses
 

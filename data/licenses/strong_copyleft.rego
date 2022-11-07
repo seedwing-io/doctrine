@@ -1,4 +1,4 @@
-package strong_copyleft
+package strong_copyleft_policy
 
 import data.licenses
 

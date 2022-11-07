@@ -1,4 +1,4 @@
-package public_domain
+package public_domain_policy
 
 import data.licenses
 

@@ -26,15 +26,33 @@ define opa_test
 	opa test $^ tests/ -r $1 -v
 endef
 
-osi.wasm: data/licenses/osi.rego data/licenses/not_osi.rego| build_dir
-	@opa build -t wasm -e osi_policy/is_osi -e osi_policy/not_osi $^
-	@$(call bundle_wasm,$@)
-
-define bundle_wasm
+license.wasm: \
+	data/licenses/all.rego \
+	data/licenses/network_copyleft.rego \
+	data/licenses/not_osi.rego \
+	data/licenses/osi.rego \
+	data/licenses/permissive.rego  \
+	data/licenses/public_domain.rego \
+	data/licenses/strong_copyleft.rego \
+	data/licenses/weak_copyleft.rego | build_dir
+	@opa build -t wasm \
+		-e all_policy/all \
+		-e network_policy/is_network_copyleft \
+		-e network_policy/network_copyleft \
+		-e permissive_policy/is_permissive \
+		-e permissive_policy/permissive \
+		-e public_domain_policy/public_domain \
+		-e public_domain_policy/is_public_domain \
+		-e strong_copyleft_policy/is_strong_copyleft \
+		-e strong_copyleft_policy/strong_copyleft \
+		-e weak_copyleft_policy/is_weak_copyleft \
+		-e weak_copyleft_policy/weak_copyleft \
+		-e osi_policy/is_osi \
+		-e osi_policy/osi \
+		-e osi_policy/not_osi $^
 	@tar -xf bundle.tar.gz /policy.wasm >/dev/null 2>&1
-	@mv policy.wasm build/$1
+	@mv policy.wasm build/$@
 	@${RM} bundle.tar.gz
-endef
 
 .PHONY: build_dir
 build_dir:
