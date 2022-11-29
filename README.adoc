@@ -20,10 +20,34 @@ WebAssembly: available
 
 ## Testing
 ----
-$ make test
-opa test data/licenses/osi.rego tests/ -r test_osi* -v
+ make test
 tests/test-osi.rego:
-data.test_osi.test_is_osi: PASS (432.94µs)
+data.test_osi_policy.test_is_osi: PASS (424.559µs)
+data.test_osi_policy.test_not_osi: PASS (220.095µs)
+--------------------------------------------------------------------------------
+PASS: 2/2
+tests/test-network_copyleft.rego:
+data.test_network_policy.test_is_network_copyleft: PASS (442.022µs)
+--------------------------------------------------------------------------------
+PASS: 1/1
+tests/test-permissive.rego:
+data.test_permissive_policy.test_is_permissive: PASS (392.783µs)
+--------------------------------------------------------------------------------
+PASS: 1/1
+tests/test-public_domain.rego:
+data.test_public_domain_policy.test_is_public_domain: PASS (374.271µs)
+--------------------------------------------------------------------------------
+PASS: 1/1
+tests/test-strong_copyleft.rego:
+data.test_strong_copyleft_policy.test_is_strong_copyleft: PASS (421.095µs)
+--------------------------------------------------------------------------------
+PASS: 1/1
+tests/test-weak_copyleft.rego:
+data.test_weak_copyleft_policy.test_is_weak_copyleft: PASS (694.629µs)
+--------------------------------------------------------------------------------
+PASS: 1/1
+tests/test-all.rego:
+data.test_all_policy.test_all: PASS (459.252µs)
 --------------------------------------------------------------------------------
 PASS: 1/1
 ----
