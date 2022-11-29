@@ -20,7 +20,7 @@ WebAssembly: available
 
 ## Testing
 ----
-$ make test-osi
+$ make test
 opa test data/licenses/osi.rego tests/ -r test_osi* -v
 tests/test-osi.rego:
 data.test_osi.test_is_osi: PASS (432.94µs)
@@ -30,6 +30,6 @@ PASS: 1/1
 
 ## Building wasm policy modules
 ----
-$ make osi.wasm
+$ make license.wasm
 ----
 The wasm module will be available in the `build` directory.
