@@ -20,7 +20,7 @@ WebAssembly: available
 
 ## Testing
 ----
- make test
+$ make test
 tests/test-osi.rego:
 data.test_osi_policy.test_is_osi: PASS (424.559µs)
 data.test_osi_policy.test_not_osi: PASS (220.095µs)
