@@ -3,8 +3,8 @@
 This repository is a library of common OPA policy rules. The rules may
 be compiled into a WASM module, enabling any WASM-compatible
 application,
-e.g. https://github.com/seedwing-io/opa-client[opa-client] to embed a
-"policy engine".
+e.g. https://github.com/seedwing-io/opa-client[opa-client], to
+effectively embed a "policy engine".
 
 ## Installing OPA
 
